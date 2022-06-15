@@ -27,6 +27,16 @@ function App() {
   };
   const handleClick = () => {};
 
+  const handlePagination = (num) => {
+    // Paginacion Infinita
+    if (pageNumber == 1 && num == -1) {
+      return setPageNumber((pageNumber = 9));
+    } else if (pageNumber == 9 && num == 1) {
+      return setPageNumber((pageNumber = 1));
+    }
+    setPageNumber((pageNumber += num));
+  };
+
   return (
     <div className="App">
       <form className="form" onSubmit={handleSubmit}>
@@ -64,16 +74,10 @@ function App() {
         )}
       </div>
       <div className="pagination">
-        <button
-          className="btn"
-          onClick={() => setPageNumber((pageNumber -= 1))}
-        >
+        <button className="btn" onClick={() => handlePagination(-1)}>
           Previous page
         </button>
-        <button
-          className="btn"
-          onClick={() => setPageNumber((pageNumber += 1))}
-        >
+        <button className="btn" onClick={() => handlePagination(1)}>
           Next page
         </button>
       </div>
