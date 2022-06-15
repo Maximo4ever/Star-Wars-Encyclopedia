@@ -1,36 +1,45 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import Loader from "./components/Loader";
+import "./App.css";
 
 function App() {
-  const [character, setCharacter] = useState();
-  const [isloading, setIsLoading] = useState(true);
+  const [character, setCharacter] = useState([]);
+  const [isloading, setIsLoading] = useState(false);
+  const [search, setSearch] = useState(String);
   let [pageNumber, setPageNumber] = useState(1);
 
+  const getData = async (url) => {
+    setIsLoading(true);
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+    setCharacter(data.results);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
-    return async () => {
-      setIsLoading(true);
-      const res = await fetch(
-        `https://swapi.dev/api/people/?page=${pageNumber}`
-      );
-      const data = await res.json();
-      console.log(data);
-      setCharacter(data.results);
-      setIsLoading(false);
-    };
+    getData(`https://swapi.dev/api/people/?page=${pageNumber}`);
   }, [pageNumber]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getData(`https://swapi.dev/api/people/?search=${search}`);
+  };
   const handleClick = () => {};
 
   return (
     <div className="App">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <input
+          value={search}
           type="text"
           placeholder="Search character"
           className="form__input"
+          onChange={(evt) => setSearch(evt.target.value)}
         />
-        <button className="form__btn">Search</button>
+        <button className="form__btn" type="submit">
+          Search
+        </button>
       </form>
       <div className="encyclopedia">
         {isloading ? (
