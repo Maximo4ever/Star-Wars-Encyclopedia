@@ -6,6 +6,7 @@
 body {
   background-color: #000;
   color: #fff;
+  background-image: url("./assets/stars/star1.png"), url("./assets/stars/star2.png"), url("./assets/stars/star3.png");
 }
 .App {
   width: 800px;
@@ -31,7 +32,7 @@ body {
   margin-left: 1em;
 }
 .encyclopedia__character {
-  background-color: #9fa3c10f;
+  background-color: #090a0b;
   padding: 20px 30px;
   margin-bottom: 20px;
   border-left: 2px solid #ff9700;
