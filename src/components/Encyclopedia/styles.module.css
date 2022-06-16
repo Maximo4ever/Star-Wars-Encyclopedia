@@ -1,0 +1,21 @@
+.encyclopedia__character {
+  background-color: #090a0b;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  border-left: 2px solid #ff9700;
+}
+.encyclopedia__character__name {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+.encyclopedia__character__name:hover {
+  text-decoration: underline;
+  color: #9f9f9f;
+}
+.encyclopedia__character h5 {
+  font-size: 18px;
+}
+.encyclopedia__character span {
+  font-weight: 400;
+}

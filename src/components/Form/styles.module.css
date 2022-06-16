@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.form__input {
+  width: 600px;
+  font-size: 17px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  outline: none;
+}
+.form__btn {
+  font-size: 17px;
+  padding: 11px 21px;
+  border-radius: 10px;
+  margin-left: 1em;
+  cursor: pointer;
+}

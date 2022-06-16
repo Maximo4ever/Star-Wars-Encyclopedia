@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+}
+.pagination__btn {
+  font-size: 17px;
+  padding: 11px 21px;
+  border-radius: 10px;
+  margin-left: 1em;
+  margin: 10px 10px 0;
+  cursor: pointer;
+}
