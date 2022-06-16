@@ -19,3 +19,7 @@
 .encyclopedia__character span {
   font-weight: 400;
 }
+.noResults {
+  text-align: center;
+  margin-block: 5rem 3rem;
+}

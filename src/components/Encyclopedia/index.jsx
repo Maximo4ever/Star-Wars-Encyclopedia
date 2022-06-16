@@ -1,16 +1,18 @@
 import Loader from "../Loader";
 import styles from "./styles.module.css";
 
-const Encyclopedia = ({ handleClick, isloading, characters }) => (
+const Encyclopedia = ({ handleClickCharacter, isloading, characters }) => (
   <div className={styles.encyclopedia}>
     {isloading ? (
       <Loader />
+    ) : !characters.length ? (
+      <h1 className={styles.noResults}>No results found</h1>
     ) : (
       characters.map((character) => (
         <div className={styles.encyclopedia__character} key={character.name}>
           <h3
             className={styles.encyclopedia__character__name}
-            onClick={handleClick}
+            onClick={handleClickCharacter}
           >
             {character.name}
           </h3>
