@@ -27,7 +27,6 @@ function App() {
     e.preventDefault();
     getData(`https://swapi.dev/api/people/?search=${search}`);
   };
-  const handleClick = () => {};
 
   const handlePagination = (num) => {
     // Paginacion Infinita
@@ -42,11 +41,7 @@ function App() {
   return (
     <div className="App">
       <Form handleSubmit={handleSubmit} search={search} setSearch={setSearch} />
-      <Encyclopedia
-        handleClick={handleClick}
-        isloading={isloading}
-        characters={characters}
-      />
+      <Encyclopedia isloading={isloading} characters={characters} />
       <Pagination handlePagination={handlePagination} />
     </div>
   );
